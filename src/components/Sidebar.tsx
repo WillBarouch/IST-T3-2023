@@ -71,11 +71,11 @@ export default function Sidebar(pageIndex:any){
                     Object.keys(pages).map((key) => (
                     <Button
                     key={key}
-                    leftIcon={pages[key].icon}
+                    leftIcon={pages[Number(key)].icon}
                     colorScheme='blue'
                     variant={(Number(key)==pageIndex) ? 'outline' : 'solid'}
                 >
-                    {pages[key].name}
+                    {pages[Number(key)].name}
                 </Button>
                     ))
                 }
@@ -87,9 +87,9 @@ export default function Sidebar(pageIndex:any){
                         Object.keys(leaderboard).map((key) => (
                             <div className={`h-full`}>
                                 <NamedAvatar
-                                    name={leaderboard[key].name}
-                                    points={leaderboard[key].points}
-                                    isOnline={leaderboard[key].isUser ? true : Boolean(Math.round(Math.random()))}
+                                    name={leaderboard[Number(key)].name}
+                                    points={leaderboard[Number(key)].points}
+                                    isOnline={leaderboard[Number(key)].isUser ? true : Boolean(Math.round(Math.random()))}
                                 />
                             </div>
 
