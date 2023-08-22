@@ -1,10 +1,7 @@
 'use client';
-import { useState, useEffect } from 'react';
-import { LinePath } from '@visx/shape';
-import { scaleLinear, scaleTime } from '@visx/scale';
-import { curveMonotoneX } from '@visx/curve';
-import { AxisBottom, AxisLeft } from '@visx/axis';
-import { ParentSize } from '@visx/responsive';
+
+import React from 'react';
+import { LineChart, Line, XAxis, YAxis, CartesianGrid, Tooltip, ResponsiveContainer } from 'recharts';
 import { motion } from 'framer-motion';
 
 const data = [
@@ -21,69 +18,55 @@ const data = [
   { time: new Date(2023, 7, 22, 15, 0), calories: 260 },
 ];
 
-const LineChart = () => {
-  const [dimensions, setDimensions] = useState({ width: 0, height: 0 });
-  const margin = { top: 20, right: 30, bottom: 50, left: 40 };
 
-  const xScale = scaleTime({
-    domain: [Math.min(...data.map(d => d.time)), Math.max(...data.map(d => d.time))],
-    range: [margin.left, dimensions.width - margin.right],
-  });
+const formatAMPM = (date:Date) => {
+  const hours = date.getHours();
+  const minutes = date.getMinutes();
+  const ampm = hours >= 12 ? 'pm' : 'am';
+  return `${(hours % 12) || 12}:${minutes < 10 ? '0' : ''}${minutes} ${ampm}`;
+};
 
-  const yScale = scaleLinear({
-    domain: [0, Math.max(...data.map(d => d.calories))],
-    range: [dimensions.height - margin.bottom, margin.top],
-    nice: true,
-  });
+interface CustomTooltipProps {
+  active: boolean;
+  payload: Array<{ value: number; payload: { time: Date } }>;
+}
 
-  useEffect(() => {
-    const boundingRect = document.getElementById('lineChartContainer')?.getBoundingClientRect() || { width: 0, height: 0 };
-    setDimensions({ width: boundingRect.width, height: boundingRect.height });
-  }, []);
+const CustomTooltip = ({ active, payload }:CustomTooltipProps) => {
+  if (active && payload && payload.length) {
+    const timeLabel = formatAMPM(payload[0].payload.time);
+    return (
+      <div className="bg-white p-2 rounded shadow">
+        <p>{`Time: ${timeLabel}`}</p>
+        <p>{`Calories: ${payload[0].value}`}</p>
+      </div>
+    );
+  }
+  return null;
+};
 
+
+const LineChartComponent = () => {
   return (
-    <div id='lineChartContainer' className="w-full h-full">
-      <ParentSize>
-        {({ width, height }) => (
-          <motion.svg width={width} height={height}>
-            <AxisBottom
-              scale={xScale}
-              top={height - margin.bottom}
-              left={margin.left}
-              tickFormat={(value) => {
-                const date = new Date(value);
-                return `${date.getHours()}:00`;
-              }}
-              tickStroke="#777"
-              tickLabelProps={() => ({
-                fontSize: 10, // Adjust the font size as needed
-                textAnchor: 'middle', // Center the tick labels
-              })}
-            />
-            <AxisLeft
-              scale={yScale}
-              top={margin.top}
-              left={margin.left}
-              tickStroke="#777"
-              tickLabelProps={() => ({
-                fontSize: 10, // Adjust the font size as needed
-                textAnchor: 'end', // Align tick labels to the end of the ticks
-              })}
-            />
-            <LinePath
-              data={data}
-              x={d => xScale(d.time)}
-              y={d => yScale(d.calories)}
-              curve={curveMonotoneX}
-              stroke="#f00"
-              strokeWidth={3}
-              strokeLinecap="round"
-            />
-          </motion.svg>
-        )}
-      </ParentSize>
-    </div>
+    <motion.div
+      initial={{ opacity: 0 }}
+      animate={{ opacity: 1 }}
+      exit={{ opacity: 0 }}
+      className="w-full h-64"
+    >
+      <ResponsiveContainer>
+        <LineChart data={data}>
+          <CartesianGrid strokeDasharray="3 3" />
+          <XAxis
+            dataKey="time"
+            tickFormatter={formatAMPM} // Format time labels
+          />
+          <YAxis />
+          <Tooltip content={<CustomTooltip />} />
+          <Line type="monotone" dataKey="calories" stroke="#3182ce" activeDot={{ r: 8 }} />
+        </LineChart>
+      </ResponsiveContainer>
+    </motion.div>
   );
 };
 
-export default LineChart;
+export default LineChartComponent;
