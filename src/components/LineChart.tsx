@@ -27,11 +27,11 @@ const formatAMPM = (date:Date) => {
 };
 
 interface CustomTooltipProps {
-  active: boolean;
-  payload: Array<{ value: number; payload: { time: Date } }>;
+  active?: boolean;
+  payload?: Array<{ value: number; payload: { time: Date } }>;
 }
 
-const CustomTooltip = ({ active, payload }:CustomTooltipProps) => {
+const CustomTooltip: React.FC<CustomTooltipProps> = ({ active, payload }) => {
   if (active && payload && payload.length) {
     const timeLabel = formatAMPM(payload[0].payload.time);
     return (
@@ -43,7 +43,6 @@ const CustomTooltip = ({ active, payload }:CustomTooltipProps) => {
   }
   return null;
 };
-
 
 const LineChartComponent = () => {
   return (
@@ -62,7 +61,7 @@ const LineChartComponent = () => {
           />
           <YAxis />
           <Tooltip content={<CustomTooltip />} />
-          <Line type="monotone" dataKey="calories" stroke="#3182ce" activeDot={{ r: 8 }} />
+          <Line type="monotone" dataKey="calories" stroke="#8884d8" activeDot={{ r: 8 }} />
         </LineChart>
       </ResponsiveContainer>
     </motion.div>
