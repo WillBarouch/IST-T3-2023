@@ -18,5 +18,8 @@ const config: Config = {
   plugins: [
     require('tailwind-nord'),
   ],
+  corePlugins: {
+    preflight: false,
+  }
 }
 export default config

@@ -7,44 +7,72 @@ import { Button, Stack } from '@chakra-ui/react'
 import {BiSolidDashboard, BiSolidMedal, BiRun, BiSolidUser} from "react-icons/bi";
 import {GiPodium} from 'react-icons/gi'
 
-const pages = {
-    0: {
+const pages = [
+    {
         name: "Dashboard",
         icon: <BiSolidDashboard />
     },
-    1: {
+    {
         name: "Rewards",
         icon: <BiSolidMedal />
     },
-    2: {
+    {
         name: "Workouts",
         icon: <BiRun />
     },
-    3: {
+    {
         name: "Profile",
         icon: <BiSolidUser />
     },
-    4: {
+    {
         name: "Leaderboard",
         icon: <GiPodium />
     }
-}
+]
 
-export default function Sidebar(){
+const leaderboard =  [
+    {
+        name: "Jane Doe",
+        points: 1400,
+        isUser: false,
+    },
+    {
+        name: "Tom Smith",
+        points: 940,
+        isUser: false,
+    },
+    {
+        name: "Alex Smith",
+        points: 220,
+        isUser: false,
+    },
+    {
+        name: "John Doe",
+        points: 140,
+        isUser: true,
+    },
+    {
+        name: "Emma James",
+        points: 12,
+        isUser: false,
+    }
+]
+
+export default function Sidebar(pageIndex:any){
 
     return(
     <CacheProvider>
       <ChakraProvider>
-        <div className={"bg-nord-6 rounded-r-3xl h-screen w-1/3 p-6"}>
-            <NamedAvatar name="John Doe" points={140} ></NamedAvatar>
+        <div className={"bg-nord-6 rounded-r-3xl h-screen w-1/4 p-6 fixed"}>
+            <NamedAvatar name="John Doe" points={140} isOnline/>
             <Stack direction='column' spacing={4} className={"my-8"}>
                 {
                     Object.keys(pages).map((key) => (
                     <Button
                     key={key}
                     leftIcon={pages[key].icon}
-                    colorScheme='green'
-                    variant='solid'
+                    colorScheme='blue'
+                    variant={(Number(key)==pageIndex) ? 'outline' : 'solid'}
                 >
                     {pages[key].name}
                 </Button>
@@ -53,6 +81,13 @@ export default function Sidebar(){
             </Stack>
             <div className={"flex flex-col"}>
                 <span className={"text-3xl text-bold"}>Leaderboard</span>
+                <Stack direction='column' spacing={4} className={"my-8"}>
+                    {
+                        Object.keys(leaderboard).map((key) => (
+                            <NamedAvatar name={leaderboard[key].name} points={leaderboard[key].points}  isOnline={leaderboard[key].isUser ? true : Boolean(Math.round(Math.random()))}/>
+                        ))
+                    }
+                </Stack>
             </div>
         </div>
       </ChakraProvider>
