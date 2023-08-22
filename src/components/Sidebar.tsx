@@ -1,4 +1,5 @@
 'use client';
+/* eslint-disable */
 import { CacheProvider } from '@chakra-ui/next-js'
 import { ChakraProvider } from '@chakra-ui/react'
 import NamedAvatar from "@/components/NamedAvatar";
@@ -84,7 +85,14 @@ export default function Sidebar(pageIndex:any){
                 <Stack direction='column' spacing={4} className={"my-8"}>
                     {
                         Object.keys(leaderboard).map((key) => (
-                            <NamedAvatar name={leaderboard[key].name} points={leaderboard[key].points}  isOnline={leaderboard[key].isUser ? true : Boolean(Math.round(Math.random()))}/>
+                            <div className={`h-full`}>
+                                <NamedAvatar
+                                    name={leaderboard[key].name}
+                                    points={leaderboard[key].points}
+                                    isOnline={leaderboard[key].isUser ? true : Boolean(Math.round(Math.random()))}
+                                />
+                            </div>
+
                         ))
                     }
                 </Stack>
