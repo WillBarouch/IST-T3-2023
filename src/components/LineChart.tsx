@@ -35,7 +35,7 @@ const CustomTooltip: React.FC<CustomTooltipProps> = ({ active, payload }) => {
     const timeLabel = formatAMPM(payload[0].payload.time);
     return (
       <div className="bg-white p-2 rounded-lg shadow">
-        <p>{`Time: ${timeLabel}`}</p>
+        <p>{timeLabel}</p>
         <p>{`Calories: ${payload[0].value}`}</p>
       </div>
     );

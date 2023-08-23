@@ -3,6 +3,7 @@ import Card from "@/components/Card"
 import LineChart from "@/components/LineChart";
 import PieChart from "@/components/PieChart";
 import RadialChart from "@/components/RadialChart";
+import HistogramChart from "@/components/HistogramChart";
 
 export default function Home() {
   return (
@@ -18,19 +19,20 @@ export default function Home() {
           <PieChart/>
       </Card>
       <Card size={3}>
-        <h1 className={"text-3xl font-bold self-center"}>Todays Steps:</h1>
+        <h1 className={"text-3xl font-bold self-center"}>Today's Steps:</h1>
           {/*@ts-ignore*/}
         <RadialChart steps />
       </Card>
       <Card size={3}>
-        <h1 className={"text-3xl font-bold self-center"}>Todays calories:</h1>
+        <h1 className={"text-3xl font-bold self-center"}>Today's calories:</h1>
         <RadialChart />
       </Card>
       <Card size={2}>
-          Hello
+          <h1 className={"text-3xl font-bold self-center"}>This week's fitness:</h1>
+          <HistogramChart />
       </Card>
       <Card size={2}>
-          Hello
+
       </Card>
 
       </div>
