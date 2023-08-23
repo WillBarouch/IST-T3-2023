@@ -2,6 +2,7 @@ import Sidebar from "@/components/Sidebar";
 import Card from "@/components/Card"
 import LineChart from "@/components/LineChart";
 import PieChart from "@/components/PieChart";
+import RadialChart from "@/components/RadialChart";
 
 export default function Home() {
   return (
@@ -17,10 +18,13 @@ export default function Home() {
           <PieChart/>
       </Card>
       <Card size={3}>
-          Hello
+        <h1 className={"text-3xl font-bold self-center"}>Todays Steps:</h1>
+          {/*@ts-ignore*/}
+        <RadialChart steps />
       </Card>
       <Card size={3}>
-          Hello
+        <h1 className={"text-3xl font-bold self-center"}>Todays calories:</h1>
+        <RadialChart />
       </Card>
       <Card size={2}>
           Hello
