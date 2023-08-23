@@ -15,20 +15,20 @@ export default function Home() {
             <LineChart></LineChart>
         </Card>
       <Card size={3}>
-          <h1 className={"text-3xl font-bold self-center"}>This week’s food intake:</h1>
+          <h1 className={"text-3xl font-bold self-center"}>This week&apos;s food intake:</h1>
           <PieChart/>
       </Card>
       <Card size={3}>
-        <h1 className={"text-3xl font-bold self-center"}>Today's Steps:</h1>
+        <h1 className={"text-3xl font-bold self-center"}>Today&apos;s Steps:</h1>
           {/*@ts-ignore*/}
         <RadialChart steps />
       </Card>
       <Card size={3}>
-        <h1 className={"text-3xl font-bold self-center"}>Today's calories:</h1>
+        <h1 className={"text-3xl font-bold self-center"}>Today&apos;s calories:</h1>
         <RadialChart />
       </Card>
       <Card size={2}>
-          <h1 className={"text-3xl font-bold self-center"}>This week's fitness:</h1>
+          <h1 className={"text-3xl font-bold self-center"}>This week&apos;s fitness:</h1>
           <HistogramChart />
       </Card>
       <Card size={2}>
