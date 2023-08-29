@@ -2,12 +2,13 @@ import Sidebar from "@/components/Sidebar";
 import Item from "@/components/Item";
 import workoutList from "@/app/workouts/workoutList";
 import MapCard from "@/components/mapCard";
+import {ImportCard} from "@/app/workouts/importCard";
 
 export default function Workouts() {
     return(
-    <main className="min-h-screen bg-nord4 text-nord-0 flex flex-col">
+    <main className="min-h-screen bg-nord4 text-nord-0 flex flex-col overflow-hidden">
         <Sidebar/>
-        <div className={"h-screen w-3/4 self-end flex flex-row flex-wrap p-8 items-center"}>
+        <div className={"h-screen w-3/4 self-end flex flex-row flex-wrap px-4 items-center"}>
             <section className={"flex flex-col w-full"}>
                 <h2 className={"text-4xl mb-8"}>Resume:</h2>
                 <div className={"flex flex-row gap-8"}>
@@ -19,7 +20,7 @@ export default function Workouts() {
                 </div>
             </section>
             <section className={"flex flex-col w-full"}>
-                <h2 className={"text-4xl mb-8"}>Recommended for you:</h2>
+                <h2 className={"text-4xl mb-4"}>Recommended for you:</h2>
                 <div className={"flex flex-row gap-8"}>
                     {
                         workoutList.recommendations.map((item, index) => {
@@ -29,6 +30,7 @@ export default function Workouts() {
                 </div>
             </section>
             <MapCard/>
+            <ImportCard/>
         </div>
     </main>
     )

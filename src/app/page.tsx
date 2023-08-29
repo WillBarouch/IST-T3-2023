@@ -4,7 +4,7 @@ import LineChart from "@/components/LineChart";
 import PieChart from "@/components/PieChart";
 import RadialChart from "@/components/RadialChart";
 import HistogramChart from "@/components/HistogramChart";
-import {MapCard} from "@/components/mapCard";
+import MapCard from "@/components/mapCard";
 
 export default function Home() {
   return (

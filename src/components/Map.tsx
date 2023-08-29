@@ -1,5 +1,6 @@
 "use client";
 import React, { useEffect } from 'react';
+// @ts-ignore
 import mapboxgl from "mapbox-gl";
 import 'mapbox-gl/dist/mapbox-gl.css';
 
@@ -13,7 +14,7 @@ const Map = () => {
       container: 'map', // HTML element ID where you want the map
       style: 'mapbox://styles/mapbox/streets-v11', // Map style URL
       center: [151.27658639919747,-33.85513039298424], // Initial center longitude and latitude
-      zoom: 12 // Initial zoom level
+      zoom: 13 // Initial zoom level
     })
     map.on('load', () => {
       map.addSource('route', {
@@ -203,9 +204,7 @@ const Map = () => {
   }, []);
 
   return (
-      <div className={"w-1/2 h-[100%] rounded-lg float-left overflow-hidden"}>
         <div id="map" className={"w-full h-full"} />
-      </div>
   );
 
 };
