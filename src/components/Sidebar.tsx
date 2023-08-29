@@ -72,6 +72,7 @@ export default function Sidebar(pageIndex:any){
                     <Button
                     key={key}
                     leftIcon={pages[Number(key)].icon}
+                    href={`/${pages[Number(key)].name.toLowerCase}`}
                     colorScheme='blue'
                     variant={(Number(key)==pageIndex) ? 'outline' : 'solid'}
                 >
