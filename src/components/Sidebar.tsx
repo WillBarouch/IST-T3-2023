@@ -1,9 +1,10 @@
 'use client';
 /* eslint-disable */
-import { CacheProvider } from '@chakra-ui/next-js'
-import { ChakraProvider } from '@chakra-ui/react'
+import { CacheProvider } from '@chakra-ui/next-js';
+import { ChakraProvider } from '@chakra-ui/react';
 import NamedAvatar from "@/components/NamedAvatar";
-import { Button, Stack } from '@chakra-ui/react'
+import { Button, Stack, Link } from '@chakra-ui/react';
+import NextLink from "next/link";
 
 import {BiSolidDashboard, BiSolidMedal, BiRun, BiSolidUser} from "react-icons/bi";
 import {GiPodium} from 'react-icons/gi'
@@ -69,15 +70,17 @@ export default function Sidebar(pageIndex:any){
             <Stack direction='column' spacing={4} className={"my-8"}>
                 {
                     Object.keys(pages).map((key) => (
-                    <Button
-                    key={key}
-                    leftIcon={pages[Number(key)].icon}
-                    href={`/${pages[Number(key)].name.toLowerCase}`}
-                    colorScheme='blue'
-                    variant={(Number(key)==pageIndex) ? 'outline' : 'solid'}
-                >
-                    {pages[Number(key)].name}
-                </Button>
+                        <Link as={NextLink} href={`/${(pages[Number(key)].name.toLowerCase() == "dashboard") ? "/" : pages[Number(key)].name.toLowerCase()}`}>
+                            <Button
+                            key={key}
+                            leftIcon={pages[Number(key)].icon}
+                            colorScheme='blue'
+                            variant={(Number(key)==pageIndex) ? 'outline' : 'solid'}
+                            className={"w-full"}
+                            >
+                            {pages[Number(key)].name}
+                            </Button>
+                        </Link>
                     ))
                 }
             </Stack>
