@@ -4,8 +4,9 @@ import NextLink from "next/link";
 
 export default function MapCard() {
     return <Card size={2}>
-        <NextLink href={"/workouts"}>
-        <h1 className={"text-3xl font-bold self-center mb-5 -mt-5"}>Last Workout:</h1>
+        <NextLink href={"/workout"}>
+            <h1 className={"text-3xl font-bold self-center mb-5 -mt-5"}>Last Workout:</h1>
+        </NextLink>
         <div className={"w-full h-full flex flex-row"}>
             <div className={"w-1/2 h-full rounded-lg overflow-hidden"}>
                 <Map/>
@@ -16,6 +17,6 @@ export default function MapCard() {
                 <p>Calories: 1200</p>
             </div>
         </div>
-        </NextLink>
+
     </Card>;
 }
