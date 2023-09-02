@@ -61,7 +61,7 @@ const leaderboard =  [
 ]
 
 export default function Sidebar(pageIndex:any){
-
+    console.log(pageIndex)
     return(
     <CacheProvider>
       <ChakraProvider>
@@ -75,7 +75,7 @@ export default function Sidebar(pageIndex:any){
                             key={key}
                             leftIcon={pages[Number(key)].icon}
                             colorScheme='blue'
-                            variant={(Number(key)==pageIndex) ? 'outline' : 'solid'}
+                            variant={(Number(key)===pageIndex) ? 'outline' : 'solid'}
                             className={"w-full"}
                             >
                             {pages[Number(key)].name}
