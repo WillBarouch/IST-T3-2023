@@ -61,12 +61,15 @@ const leaderboard =  [
 ]
 
 export default function Sidebar(pageIndex:any){
-
+    console.log(pageIndex)
     return(
     <CacheProvider>
       <ChakraProvider>
         <div className={"bg-nord-6 rounded-r-3xl h-screen w-1/4 p-6 fixed"}>
+            <Link as={NextLink} href={"/profile"}       >
             <NamedAvatar name="John Doe" points={140} isOnline/>
+            </Link>
+
             <Stack direction='column' spacing={4} className={"my-8"}>
                 {
                     Object.keys(pages).map((key) => (
@@ -75,7 +78,7 @@ export default function Sidebar(pageIndex:any){
                             key={key}
                             leftIcon={pages[Number(key)].icon}
                             colorScheme='blue'
-                            variant={(Number(key)==pageIndex) ? 'outline' : 'solid'}
+                            variant={(Number(key)===pageIndex) ? 'outline' : 'solid'}
                             className={"w-full"}
                             >
                             {pages[Number(key)].name}

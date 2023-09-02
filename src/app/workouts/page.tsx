@@ -7,7 +7,7 @@ import {ImportCard} from "@/app/workouts/importCard";
 export default function Workouts() {
     return(
     <main className="min-h-screen bg-nord4 text-nord-0 flex flex-col overflow-hidden">
-        <Sidebar/>
+        <Sidebar pageIndex={2}/>
         <div className={"h-screen w-3/4 self-end flex flex-row flex-wrap px-4 items-center"}>
             <section className={"flex flex-col w-full"}>
                 <h2 className={"text-4xl mb-8"}>Resume:</h2>
