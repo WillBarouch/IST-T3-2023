@@ -9,7 +9,7 @@ const ButtonWidth = "w-5/12";
 export function ImportCard() {
     return <CacheProvider>
         <ChakraProvider>
-            <Card size={2}>
+            <Card width={2} height={3}>
                 <h1 className={"text-3xl font-bold self-center mb-5 -mt-5"}>Import workout data:</h1>
                 <div className={"w-full h-4/5 bg-nord-4 rounded-lg"}>
                     <div className={"p-3 flex flex-row flex-wrap basis-1/3 gap-2 items-center justify-center align-middle"}>

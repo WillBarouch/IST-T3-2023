@@ -13,8 +13,8 @@ const Map = () => {
     const map = new mapboxgl.Map({
       container: 'map', // HTML element ID where you want the map
       style: 'mapbox://styles/mapbox/streets-v11', // Map style URL
-      center: [151.27658639919747,-33.85513039298424], // Initial center longitude and latitude
-      zoom: 13 // Initial zoom level
+      center: [151.277180,-33.8585], // Initial center longitude and latitude
+      zoom: 13.7 // Initial zoom level
     })
     map.on('load', () => {
       map.addSource('route', {

@@ -20,7 +20,7 @@ export default function Workout() {
     <main className="min-h-screen bg-nord4 text-nord-0 flex flex-col overflow-hidden">
         <Sidebar/>
         <div className={"h-screen w-3/4 self-end flex flex-row flex-wrap p-4 items-center text-xl"}>
-            <Card size={1} fullHeight>
+            <Card width={1} height={1}>
                 <div className={"w-full text-center mb-2"}>
                     <h1 className={"text-3xl font-bold self-center"}>Vaucluse Walk</h1>
                     <h1 className={"text-3xl font-bold self-center"}>July 25</h1>
