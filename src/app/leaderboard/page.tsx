@@ -14,7 +14,7 @@ export default function Leaderboard() {
                     <h1 className={"text-3xl font-bold text-center"}>Leaderboard</h1>
                     {
                         Object.keys(leaderboard).map((key) => (
-                            <div className={`w-1/2 bg-nord-4 m-1 rounded-lg`}>
+                            <div className={`w-1/2 bg-nord-4 m-1 rounded-lg`} key={key}>
                                 <NamedAvatar
                                     name={leaderboard[Number(key)].name}
                                     points={leaderboard[Number(key)].points}
