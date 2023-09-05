@@ -29,25 +29,26 @@ const CustomTooltip: React.FC<CustomTooltipProps> = ({ active, payload }) => {
 
 const PieChartComponent = () => {
   return (
-    <ResponsiveContainer width="100%" height="100%" className={"self-end -mb-16"}>
+    <div className={"-mb-16 h-full w-full self-center overflow-visible"}>
+    <ResponsiveContainer width="100%" height="100%" className={"self-center overflow-visible"}>
       <PieChart>
         <Pie
           data={data}
           dataKey="value"
+          cx={"50%"}
+          cy={"50%"}
           nameKey="name"
-          cx="50%"
-          cy="50%"
-          outerRadius={70}
-          fill="#8884d8"
+          outerRadius={"70%"}
           label={({ name }) => name}
         >
           {data.map((entry, index) => (
-            <Cell key={`cell-${index}`} fill={COLORS[index % COLORS.length]} />
+            <Cell key={`cell-${index}`} fill={COLORS[index % COLORS.length]}/>
           ))}
         </Pie>
         <Tooltip content={<CustomTooltip />} />
       </PieChart>
     </ResponsiveContainer>
+    </div>
   );
 };
 

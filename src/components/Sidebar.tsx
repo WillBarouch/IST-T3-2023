@@ -5,7 +5,7 @@ import { ChakraProvider } from '@chakra-ui/react';
 import NamedAvatar from "@/components/NamedAvatar";
 import { Button, Stack, Link } from '@chakra-ui/react';
 import NextLink from "next/link";
-
+import leaderboard from "@/components/leaderboard";
 import {BiSolidDashboard, BiSolidMedal, BiRun, BiSolidUser} from "react-icons/bi";
 import {GiPodium} from 'react-icons/gi'
 
@@ -29,34 +29,6 @@ const pages = [
     {
         name: "Leaderboard",
         icon: <GiPodium />
-    }
-]
-
-const leaderboard =  [
-    {
-        name: "Jane Doe",
-        points: 1400,
-        isUser: false,
-    },
-    {
-        name: "Tom Smith",
-        points: 940,
-        isUser: false,
-    },
-    {
-        name: "Alex Smith",
-        points: 220,
-        isUser: false,
-    },
-    {
-        name: "John Doe",
-        points: 140,
-        isUser: true,
-    },
-    {
-        name: "Emma James",
-        points: 12,
-        isUser: false,
     }
 ]
 
@@ -91,7 +63,7 @@ export default function Sidebar(pageIndex:any){
                 <span className={"text-3xl text-bold"}>Leaderboard</span>
                 <Stack direction='column' spacing={4} className={"my-8"}>
                     {
-                        Object.keys(leaderboard).map((key) => (
+                        Object.keys(leaderboard.slice(0,5)).map((key) => (
                             <div className={`h-full`}>
                                 <NamedAvatar
                                     name={leaderboard[Number(key)].name}

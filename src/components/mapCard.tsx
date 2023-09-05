@@ -8,13 +8,13 @@ import {CacheProvider} from "@chakra-ui/next-js";
 export default function MapCard({large}:{large?:boolean}) {
     return <Card width={2} height={large? 1 : 3}>
         <h1 className={"text-3xl font-bold self-center mb-5 -mt-5"}>Last Workout:</h1>
-        <div className={"w-full h-full flex flex-row"}>
-            <div className={"w-1/2 h-full rounded-lg overflow-hidden"}>
+        <div className={`w-full h-full flex ${large?"flex-col" : "flex-row"}`}>
+            <div className={`${large?"w-full":"w-1/2"} h-full rounded-lg overflow-hidden`}>
                 <Map/>
             </div>
             <ChakraProvider>
             <CacheProvider>
-            <div className={"w-1/2 h-full p-2"}>
+            <div className={`${large?"w-full":"w-1/2"} ${large?"h-1/2":"h-full"} p-2 flex flex-col flex-wrap`}>
                 <p>25 Points</p>
                 <p>Type: Run</p>
                 <p>Duration: 40m</p>
@@ -22,11 +22,12 @@ export default function MapCard({large}:{large?:boolean}) {
                 <NextLink href={"/workout"}>
                 <Button className={"mt-4"} colorScheme={"blue"}>View Workout</Button>
                 </NextLink>
-            </div>
-            <div className={"flex flex-col gap-2"}>
+                <div className={"flex flex-col gap-2"}>
                     <Avatar name={"John Doe"}></Avatar>
                     <Avatar name={"Jane Doe"}></Avatar>
+                 </div>
             </div>
+
             </CacheProvider>
             </ChakraProvider>
 

@@ -21,7 +21,7 @@ export default function Profile() {
             <Sidebar/>
             <ChakraProvider>
                 <CacheProvider>
-               <div className={"h-screen w-3/4 self-end flex flex-col flex-wrap p-8 items-center text-xl gap-2"}>
+               <div className={"h-screen w-3/4 self-end flex flex-col p-8 items-center text-xl gap-2"}>
                    <div className={"flex flex-row items-center flex-wrap mb-8"}>
                         <Avatar size={"2xl"} name={"John Doe"} src={"https://bit.ly/dan-abramov"} />
                        <p className={"text-7xl ml-6"}>John Doe</p>
@@ -57,7 +57,7 @@ export default function Profile() {
                         <Badge colorScheme='red' borderRadius={15}>Calorie Crusher</Badge>
                         <Badge colorScheme='orange' borderRadius={15}>Strength Stalwart</Badge>
                     </div>
-                    <div className={"flex flex-col flex-wrap w-full h-3/4 justify-start align-baseline"}>
+                    <div className={"flex flex-col flex-wrap w-2/3 h-3/4 justify-start align-baseline"}>
                         <Card width={2} height={2}>
                             <h1 className={"text-3xl font-bold"}>Go Pro!</h1>
                             <p className={"text-2xl"}>Unlock exclusive benefits for just $9.99 per month!</p>
@@ -70,6 +70,7 @@ export default function Profile() {
                             <h1 className={"text-3xl font-bold"}>Settings</h1>
                             <p className={"text-2xl"}>Password: **********</p>
                             <p className={"text-2xl"}>Email: johnddoe@hotmail.net</p>
+                            <p className={"text-2xl"}>Phone: +61 403 519 519</p>
                             <div className={"flex flex-row w-full flex-initial gap-6 align-middle items-center justify-center mt-12"}>
                                 <Button className={"w-1/3"} colorScheme={"blue"}>Change</Button>
                             </div>
