@@ -24,45 +24,24 @@ const leaderboard =  [
         points: 12,
         isUser: false,
     },
-    // 8 additional entries:
     {
         name: "Sarah Johnson",
-        points: 750,
+        points: 10,
         isUser: false,
     },
     {
         name: "Michael Brown",
-        points: 600,
+        points: 10,
         isUser: false,
     },
     {
         name: "Olivia Davis",
-        points: 500,
+        points: 5,
         isUser: false,
     },
     {
         name: "William Wilson",
-        points: 480,
-        isUser: false,
-    },
-    {
-        name: "Emily Wilson",
-        points: 380,
-        isUser: false,
-    },
-    {
-        name: "Daniel White",
-        points: 320,
-        isUser: false,
-    },
-    {
-        name: "Ava Martinez",
-        points: 290,
-        isUser: false,
-    },
-    {
-        name: "James Anderson",
-        points: 200,
+        points: 0,
         isUser: false,
     },
 ];
