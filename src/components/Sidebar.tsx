@@ -11,6 +11,10 @@ import {GiPodium} from 'react-icons/gi'
 
 const pages = [
     {
+        name: "Profile",
+        icon: <BiSolidUser />
+    },
+    {
         name: "Dashboard",
         icon: <BiSolidDashboard />
     },
@@ -21,10 +25,6 @@ const pages = [
     {
         name: "Workouts",
         icon: <BiRun />
-    },
-    {
-        name: "Profile",
-        icon: <BiSolidUser />
     },
     {
         name: "Leaderboard",
