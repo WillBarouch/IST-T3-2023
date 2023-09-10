@@ -14,8 +14,15 @@ import {
 } from "@chakra-ui/react";
 import Card from "@/components/Card";
 import MapCard from "@/components/mapCard";
+import { useEffect, useState } from 'react';
+
 
 export default function Profile() {
+    const [isWindowDefined, setIsWindowDefined] = useState(false);
+
+    useEffect(() => {
+        setIsWindowDefined(typeof window !== 'undefined');
+    }, []);
     return(
         <main className="min-h-screen bg-nord4 text-nord-0 flex flex-col overflow-hidden">
             <Sidebar/>
@@ -60,7 +67,7 @@ export default function Profile() {
                     <div className={"flex flex-col flex-wrap w-full xl:w-2/3 h-3/4 text-2xl justify-start align-baseline"}>
                         <Card width={2} height={2} title={"Go Pro!"}>
                             <p>Unlock exclusive benefits for just $9.99 per month!</p>
-                            {window?.innerWidth > 2160 && (
+                            {isWindowDefined && window.innerWidth > 2160 && (
                                 <>
                                     <p className={"text-bold"}>Benefits include:</p>
                                     <p> - Unlimited workout history</p>
@@ -77,7 +84,7 @@ export default function Profile() {
                             <p className={"text-2xl"}>Password: **********</p>
                             <p className={"text-2xl"}>Email: johnddoe@hotmail.net</p>
                             <p className={"text-2xl"}>Phone: +61 403 519 519</p>
-                            {window?.innerWidth > 2160 && (
+                            {isWindowDefined && window?.innerWidth > 2160 && (
                                 <>
                                     <p>2FA: Enabled</p>
                                     <p>Timezone: UTC+10</p>
