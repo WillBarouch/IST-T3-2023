@@ -21,7 +21,7 @@ export default function Workout() {
         <Sidebar/>
         <div className={"h-screen w-3/4 self-end flex flex-row flex-wrap p-4 items-center text-xl"}>
             <Card width={1} height={1}>
-                <div className={"w-full text-center mb-2"}>
+                <div className={"w-full text-center -mt-4 mb-2"}>
                     <h1 className={"text-3xl font-bold self-center"}>Vaucluse Walk</h1>
                     <h1 className={"text-3xl font-bold self-center"}>July 25</h1>
                 </div>
@@ -80,7 +80,6 @@ export default function Workout() {
                     </div>
                 </ChakraProvider>
                 </CacheProvider>
-
                 </div>
                <HRChart/>
             </Card>

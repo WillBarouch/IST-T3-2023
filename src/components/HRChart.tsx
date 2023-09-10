@@ -50,7 +50,7 @@ const CustomTooltip: React.FC<CustomTooltipProps> = ({ active, payload }) => {
 
 const HRChart = () => {
   return (
-      <div className={"h-1/2"}>
+      <div className={"h-1/4 3xl:h-1/3 -mt-16 3xl:-mt-36"}>
       <ResponsiveContainer>
         <LineChart data={data}>
           <CartesianGrid strokeDasharray="3 3" />

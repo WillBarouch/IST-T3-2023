@@ -11,7 +11,7 @@ interface props {
 
 export default function NamedAvatar({name, points, isOnline, className}:props) {
     return(
-        <div className={"flex flex-rows " + className}>
+        <div className={"flex flex-rows no-underline" + className}>
             <ChakraProvider>
             <CacheProvider>
               <Avatar name={name}>
@@ -21,7 +21,7 @@ export default function NamedAvatar({name, points, isOnline, className}:props) {
               </Avatar>
            </CacheProvider>
             </ChakraProvider>
-                <div className={"flex flex-col ml-4 text-l h-full align-middle"}>
+                <div className={"flex flex-col ml-4 text-l h-full align-middle no-underline decoration-0"}>
                     <span className={"text-2xl"}>{name}</span>
                     <span>{points} Points</span>
                 </div>
