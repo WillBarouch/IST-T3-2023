@@ -22,11 +22,11 @@ const dataCalories = [
 
 // @ts-ignore
 const CustomLabel = ({ value, max, goalMet }) => {
-  const text = goalMet? `${max} goal \n met!`  : `${value} of \n ${max} goal.`
+  const text = goalMet? `${max} \n goal \n met!`  : `${value} of \n ${max} \n goal.`
   const lines = text.split('\n');
   const cx = "50%";
   return (
-    <text cx={cx} textAnchor="middle" y="35%" fill="#000" className="text-center whitespace-normal font-semibold text-lg">
+    <text cx={cx} textAnchor="middle" y="25%" fill="#000" className="text-center whitespace-normal font-semibold text-lg 2xl:text-xl 3xl:text-2xl">
             {lines.map((line, index) => (
               <tspan key={index} x={cx} dy="1.2em">
                 {line}

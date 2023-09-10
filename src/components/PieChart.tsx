@@ -19,7 +19,7 @@ export interface CustomTooltipProps {
 const CustomTooltip: React.FC<CustomTooltipProps> = ({ active, payload }) => {
   if (active && payload && payload.length) {
     return (
-      <div className="bg-white p-2 rounded-lg shadow">
+      <div className="bg-white p-2 rounded-lg shadow overflow-visible">
         <p>{`${payload[0].name}: ${payload[0].value}%`}</p>
       </div>
     );
@@ -29,14 +29,14 @@ const CustomTooltip: React.FC<CustomTooltipProps> = ({ active, payload }) => {
 
 const PieChartComponent = () => {
   return (
-    <div className={"-mb-16 h-full w-full self-center overflow-visible"}>
+    <div className={"h-full w-full -mb-6 self-center overflow-visible"}>
     <ResponsiveContainer width="100%" height="100%" className={"self-center overflow-visible"}>
       <PieChart>
         <Pie
           data={data}
           dataKey="value"
           cx={"50%"}
-          cy={"50%"}
+          cy={"60%"}
           nameKey="name"
           outerRadius={"70%"}
           label={({ name }) => name}

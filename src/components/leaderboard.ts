@@ -36,14 +36,20 @@ const leaderboard =  [
     },
     {
         name: "Olivia Davis",
-        points: 5,
+        points: 8,
         isUser: false,
     },
     {
         name: "William Wilson",
+        points: 5,
+        isUser: false,
+    },
+    {
+        name: "Emily Wilson",
         points: 0,
         isUser: false,
     },
+
 ];
 
 export default leaderboard;

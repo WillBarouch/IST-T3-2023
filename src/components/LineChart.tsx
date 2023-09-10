@@ -1,7 +1,6 @@
 'use client';
 import React from 'react';
 import { LineChart, Line, XAxis, YAxis, CartesianGrid, Tooltip, ResponsiveContainer } from 'recharts';
-import { motion } from 'framer-motion';
 
 const data = [
   { time: new Date(2023, 7, 22, 6, 0), calories: 300 },
@@ -45,12 +44,6 @@ const CustomTooltip: React.FC<CustomTooltipProps> = ({ active, payload }) => {
 
 const LineChartComponent = () => {
   return (
-    <motion.div
-      initial={{ opacity: 0 }}
-      animate={{ opacity: 1 }}
-      exit={{ opacity: 0 }}
-      className="w-full h-64"
-    >
       <ResponsiveContainer>
         <LineChart data={data}>
           <CartesianGrid strokeDasharray="3 3" />
@@ -63,7 +56,6 @@ const LineChartComponent = () => {
           <Line type="monotone" dataKey="calories" stroke="#8884d8" activeDot={{ r: 8 }} />
         </LineChart>
       </ResponsiveContainer>
-    </motion.div>
   );
 };
 
