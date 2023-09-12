@@ -10,6 +10,9 @@ const config: Config = {
   ],
   theme: {
     extend: {
+      fontSize: {
+        '2xs': '0.5rem',
+      },
       screens: {
         '3xl': '2160px'
       },

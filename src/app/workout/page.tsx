@@ -55,10 +55,10 @@ export default function Workout() {
                         </Stat>
                         <Stat>
                           <StatLabel>Duration</StatLabel>
-                          <StatNumber>46m</StatNumber>
+                          <StatNumber>46min</StatNumber>
                           <StatHelpText>
                             <StatArrow type="increase" />
-                                41m
+                                41min
                           </StatHelpText>
                         </Stat>
                         <Stat>
@@ -75,6 +75,22 @@ export default function Workout() {
                           <StatHelpText>
                             <StatArrow type="decrease" />
                               104 BPM
+                          </StatHelpText>
+                        </Stat>
+                        <Stat width={"300px"}>
+                          <StatLabel>Distance</StatLabel>
+                          <StatNumber> 2.4km </StatNumber>
+                          <StatHelpText>
+                            <StatArrow type="decrease" />
+                            2.7km
+                          </StatHelpText>
+                        </Stat>
+                        <Stat width={"300px"}>
+                          <StatLabel>Pace</StatLabel>
+                          <StatNumber> 19 min / km </StatNumber>
+                          <StatHelpText>
+                            <StatArrow type="decrease" />
+                            22 min / km
                           </StatHelpText>
                         </Stat>
                     </div>

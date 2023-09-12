@@ -80,17 +80,19 @@ export default function Profile() {
                                 <Button className={"w-1/3"} colorScheme={"green"}>Yes please!</Button>
                             </div>
                         </Card>
-                        <Card width={2} height={2} title={"Settings:"}>
+                        <Card width={2} height={2} title={"Settings:"} between>
                             <p className={"text-2xl"}>Password: **********</p>
                             <p className={"text-2xl"}>Email: johnddoe@hotmail.net</p>
-                            <p className={"text-2xl"}>Phone: +61 403 519 519</p>
+                            {isWindowDefined && window?.innerWidth > 1650 && (
+                                <p className={"text-2xl"}>Phone: +61 403 519 519</p>
+                            )}
                             {isWindowDefined && window?.innerWidth > 2160 && (
                                 <>
                                     <p>2FA: Enabled</p>
                                     <p>Timezone: UTC+10</p>
                                 </>
                             )}
-                            <div className={"flex flex-row w-full flex-initial gap-6 align-middle items-center justify-center mt-6 xl:mt-12 3xl:mt-3"}>
+                            <div className={"w-full gap-6 align-middle items-center self-end flex justify-center mt-6 xl:mt-8 3xl:mt-3"}>
                                 <Button className={"w-1/3"} colorScheme={"blue"}>Change</Button>
                             </div>
                         </Card>
