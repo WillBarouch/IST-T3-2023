@@ -35,8 +35,8 @@ const pages = [
 export default function Sidebar(pageIndex:any){
     return(
     <CacheProvider>
-      <ChakraProvider>
-        <div className={"bg-nord-6 rounded-r-3xl h-screen w-1/4 p-6 fixed"}>
+    <ChakraProvider>
+        <aside className={"bg-nord-6 rounded-r-3xl h-screen w-1/4 p-6 fixed"}>
             <Link as={NextLink} href={"/profile"} className={"no-underline"}>
             <NamedAvatar name="John Doe" points={140} isOnline/>
             </Link>
@@ -75,8 +75,8 @@ export default function Sidebar(pageIndex:any){
                     }
                 </Stack>
             </div>
-        </div>
-      </ChakraProvider>
+        </aside>
+    </ChakraProvider>
     </CacheProvider>
     )
 }
