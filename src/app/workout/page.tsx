@@ -4,7 +4,7 @@ import Map from "@/components/Map";
 import Card from "@/components/Card"
 import NamedAvatar from "@/components/NamedAvatar";
 import {ChakraProvider} from "@chakra-ui/react";
-import React from "react";
+import React, {useEffect, useState} from "react";
 import {CacheProvider} from "@chakra-ui/next-js";
 import {
   Stat,
@@ -16,6 +16,11 @@ import {
 import HRChart from "@/components/HRChart";
 
 export default function Workout() {
+    const [isWindowDefined, setIsWindowDefined] = useState(false);
+
+    useEffect(() => {
+        setIsWindowDefined(typeof window !== 'undefined');
+    }, []);
     return(
     <main className="min-h-screen bg-nord4 text-nord-0 flex flex-col overflow-hidden">
         <Sidebar/>
@@ -34,7 +39,7 @@ export default function Workout() {
                     <div className={"w-1/6 flex flex-col"}>
 
                             <NamedAvatar name={"Jane Doe"} points={1400} isOnline={false}/>
-                            <NamedAvatar name={"John Doe"} points={140} isOnline/>
+                        {isWindowDefined && window?.innerHeight > 635 && (<NamedAvatar name={"John Doe"} points={140} isOnline/>)}
                     </div>
                     <div className={"full flex flex-row"}>
                         <Stat>
@@ -77,22 +82,24 @@ export default function Workout() {
                               104 BPM
                           </StatHelpText>
                         </Stat>
+                        {isWindowDefined && window?.innerWidth > 1540 && (
                         <Stat width={"300px"}>
-                          <StatLabel>Distance</StatLabel>
-                          <StatNumber> 2.4km </StatNumber>
-                          <StatHelpText>
-                            <StatArrow type="decrease" />
-                            2.7km
-                          </StatHelpText>
-                        </Stat>
+                            <StatLabel>Distance</StatLabel>
+                            <StatNumber> 2.4km </StatNumber>
+                            <StatHelpText>
+                                <StatArrow type="decrease"/>
+                                2.7km
+                            </StatHelpText>
+                        </Stat>)}
+                        {isWindowDefined && window?.innerWidth > 1830 &&(
                         <Stat width={"300px"}>
-                          <StatLabel>Pace</StatLabel>
-                          <StatNumber> 19 min / km </StatNumber>
-                          <StatHelpText>
-                            <StatArrow type="decrease" />
-                            22 min / km
-                          </StatHelpText>
-                        </Stat>
+                            <StatLabel>Pace</StatLabel>
+                            <StatNumber> 19 min / km </StatNumber>
+                            <StatHelpText>
+                                <StatArrow type="decrease"/>
+                                22 min / km
+                            </StatHelpText>
+                        </Stat>)}
                     </div>
                 </ChakraProvider>
                 </CacheProvider>

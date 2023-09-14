@@ -10,7 +10,7 @@ export default function Workouts() {
         <div className={"h-screen w-3/4 self-end flex flex-row flex-wrap px-4 items-center"}>
             <section className={"flex flex-col w-full items-center jusify-center "}>
                 <h2 className={"text-4xl mb-8"}>Resume:</h2>
-                <div className={"flex flex-row gap-8 flex-wrap overflow-hidden"}>
+                <div className={"flex flex-row gap-8 w-[95%] justify-center items-center"}>
                     {
                         [...Array(4)].map((x, i) => {
                             return <Item key={i} text={"Workout name - Workout type"} text2={"Points"} isWorkout/>
@@ -20,7 +20,7 @@ export default function Workouts() {
             </section>
             <section className={"flex flex-col w-full items-center justify-center"}>
                 <h2 className={"text-4xl mb-4"}>Recommended for you:</h2>
-                <div className={"flex flex-row gap-8 flex-wrap overflow-hidden"}>
+                <div className={"flex flex-row gap-8 w-[95%] justify-center items-center"}>
                     {
                         [...Array(4)].map((x, i) => {
                             return <Item key={i} text={"Workout name - Workout type"} text2={"Points"} isWorkout/>

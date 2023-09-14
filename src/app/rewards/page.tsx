@@ -37,10 +37,17 @@ export default function Rewards() {
                     </div>
                 </section>
                 <section className={"flex flex-col w-full items-center justify-center"}>
-                    <h2 className={"text-4xl mb-4 text-left left"}>You might have to work a little bit harder for these:</h2>
-                    <div className={"flex flex-row flex-wrap gap-8 w-[95%] justify-center items-center"}>
+                    <h2 className={"text-4xl my-8 text-left left"}>You might have to work a little bit harder for these:</h2>
+                    <div className={"flex flex-row gap-8 w-[95%] justify-center items-center"}>
                         {
-                            [...Array(8)].map((x, i) => {
+                            [...Array(4)].map((x, i) => {
+                                return <Item key={i} text={"Workout name - Workout type"} text2={"Points"} isWorkout={false}/>
+                            })
+                        }
+                    </div>
+                    <div className={"flex flex-row gap-8 w-[95%] justify-center items-center"}>
+                        {
+                            [...Array(4)].map((x, i) => {
                                 return <Item key={i} text={"Workout name - Workout type"} text2={"Points"} isWorkout={false}/>
                             })
                         }
