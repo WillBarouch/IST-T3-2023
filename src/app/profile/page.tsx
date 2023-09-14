@@ -28,11 +28,11 @@ export default function Profile() {
             <Sidebar/>
             <ChakraProvider>
                 <CacheProvider>
-               <div className={"h-screen w-3/4 self-end flex flex-col p-8 items-center overflow-scroll text-xl gap-2"}>
-                   <div className={"flex flex-row items-center flex-wrap mb-8"}>
+               <div className={"h-screen w-3/4 self-end flex flex-col p-8 items-center text-xl gap-2"}>
+                   <div className={"flex flex-row items-center flex-wrap w-4/5 mb-8"}>
                         <Avatar size={"2xl"} name={"John Doe"} />
                        <p className={"text-7xl ml-6"}>John Doe</p>
-                       <div className={"flex flex-row flex-wrap  gap-6 ml-48"}>
+                       <div className={"flex flex-row flex-wrap justify-self-end gap-6 ml-48"}>
                             <Stat>
                               <StatLabel>Points</StatLabel>
                               <StatNumber>140</StatNumber>
@@ -64,7 +64,7 @@ export default function Profile() {
                         <Badge colorScheme='red' borderRadius={15}>Calorie Crusher</Badge>
                         <Badge colorScheme='orange' borderRadius={15}>Strength Stalwart</Badge>
                     </div>
-                    <div className={"flex flex-col flex-wrap w-full xl:w-2/3 h-3/4 text-2xl justify-start align-baseline"}>
+                    <div className={"flex flex-col flex-wrap w-4/5 h-4/5 text-2xl justify-start align-baseline"}>
                         <Card width={2} height={2} title={"Go Pro!"}>
                             <p>Unlock exclusive benefits for just $9.99 per month!</p>
                             {isWindowDefined && window.innerWidth > 2160 && (
