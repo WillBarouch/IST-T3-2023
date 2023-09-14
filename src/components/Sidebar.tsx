@@ -44,7 +44,7 @@ export default function Sidebar(pageIndex:any){
             <Stack direction='column' spacing={4} className={"my-8"}>
                 {
                     Object.keys(pages).map((key) => (
-                        <Link as={NextLink} href={`/${(pages[Number(key)].name.toLowerCase() == "dashboard") ? "/" : pages[Number(key)].name.toLowerCase()}`}>
+                        <Link as={NextLink} href={pages[Number(key)].name.toLowerCase()}>
                             <Button
                             key={key}
                             leftIcon={pages[Number(key)].icon}

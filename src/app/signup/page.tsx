@@ -14,15 +14,14 @@ import {
 import NextLink from "next/link";
 import {ChakraProvider} from "@chakra-ui/react";
 import {CacheProvider} from "@chakra-ui/next-js";
-import Card from "@/components/Card";
 import Icon from '@/components/Icon'
 
 export default function Signup() {
     return(
-    <main className="min-h-screen bg-nord4 text-nord-0 flex flex-col overflow-hidden items-center justify-center place-content-center px-[33%]">
+    <main className="min-h-screen bg-nord4 text-nord-0 flex flex-col overflow-hidden items-center justify-center place-content-center px-[10%] lg:px-[15%] xl:px-[33%]">
     <ChakraProvider>
     <CacheProvider>
-        <Card width={1} height={1}>
+        <div className={"w-3/4 h-full p-6 rounded-3xl bg-nord-6 flex flex-col items-center"}>
           <Stack spacing={4}>
              <Icon/>
               <h1 className={"text-3xl font-bold text-center"}>Welcome to FlexiFit!</h1>
@@ -66,7 +65,7 @@ export default function Signup() {
                 </Link>
             </Stack>
           </Stack>
-        </Card>
+        </div>
     </CacheProvider>
     </ChakraProvider>
     </main>
