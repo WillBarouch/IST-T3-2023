@@ -23,6 +23,7 @@ export default function Profile() {
     useEffect(() => {
         setIsWindowDefined(typeof window !== 'undefined');
     }, []);
+
     return(
         <main className="min-h-screen bg-nord4 text-nord-0 flex flex-col overflow-hidden">
             <Sidebar/>
