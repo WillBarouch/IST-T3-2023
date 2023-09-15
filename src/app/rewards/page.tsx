@@ -7,11 +7,11 @@ import {CacheProvider} from "@chakra-ui/next-js";
 
 export default function Rewards() {
     return(
-        <main className="min-h-screen bg-nord4 text-nord-0 flex flex-col overflow-scroll">
+        <main className="h-full bg-nord4 text-nord-0 flex flex-col">
             <Sidebar/>
             <ChakraProvider>
             <CacheProvider>
-            <div className={"h-screen w-3/4 self-end flex flex-col px-4 items-center"}>
+            <div className={"h-screen w-3/4 self-end flex flex-col px-4 items-center overflow-y-auto-scroll"}>
                 <div className={"w-1/6 h-1/5 flex flex-row py-8 justify-center align-top"}>
                     <Stat>
                       <StatLabel>Points</StatLabel>

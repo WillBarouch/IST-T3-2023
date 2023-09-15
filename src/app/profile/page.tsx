@@ -30,12 +30,12 @@ export default function Profile() {
             <ChakraProvider>
                 <CacheProvider>
                <div className={"h-screen w-3/4 self-end flex flex-col p-8 items-center items text-xl gap-2"}>
-                   <div className={"flex flex-row items-center flex-wrap justify-between w-4/5 mb-8"}>
+                   <div className={"flex flex-row items-center justify-between w-4/5 mb-8"}>
                         <div className={"flex align-middle justify-center flex-row"}>
                             <Avatar size={"2xl"} name={"John Doe"} />
                             <p className={"text-7xl ml-6 align-middle self-center text-center"}>John Doe</p>
                         </div>
-                       <div className={"flex flex-row flex-wrap gap-6 ml-48"}>
+                       <div className={"flex flex-row gap-6 ml-48"}>
                             <Stat>
                               <StatLabel>Points</StatLabel>
                               <StatNumber>140</StatNumber>
