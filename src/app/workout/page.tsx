@@ -39,7 +39,7 @@ export default function Workout() {
                     <div className={"w-1/6 flex flex-col"}>
 
                             <NamedAvatar name={"Jane Doe"} points={1400} isOnline={false}/>
-                        {isWindowDefined && window?.innerHeight > 635 && (<NamedAvatar name={"John Doe"} points={140} isOnline/>)}
+                        {isWindowDefined && window?.innerHeight > 635 && window?.innerWidth > 1100  && (<NamedAvatar name={"John Doe"} points={140} isOnline/>)}
                     </div>
                     <div className={"full flex flex-row"}>
                         <Stat>

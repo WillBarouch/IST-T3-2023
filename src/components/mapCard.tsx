@@ -7,7 +7,7 @@ import {CacheProvider} from "@chakra-ui/next-js";
 
 export default function MapCard({large}:{large?:boolean}) {
     return <Card width={2} height={large? 1 : 3} title={"Last Workout:"}>
-        <div className={`w-full h-full flex ${large?"flex-col" : "flex-row"}`}>
+        <div className={`w-full h-full pb-4 flex ${large?"flex-col" : "flex-row"}`}>
             <div className={`${large?"w-full":"w-1/2"} h-full rounded-lg overflow-hidden`}>
                 <Map/>
             </div>

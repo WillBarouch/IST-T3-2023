@@ -26,8 +26,9 @@ Open [http://localhost:3000](http://localhost:3000) with your browser to see the
 
 However, this is likely not going to be very fast, especially for the dashboard page as all the rendering that would usually be done on the server-side is done on your machine. To get a better experience, you can visit the pre-rendered version of the side at [ist.willbarouch.com](https://ist.willbarouch.com).
 
-If you just want to look at the code, you can do so in the [src](src) folder. The [app](src/app) folder contains the pages that are rendered by Next.js. Each page is a page.tsx inside it's own folder. The [layout](src/app/layout.tsx) file contains the wrapper for the entire site. The [components](src/components) folder contains the components that are inside these pages. Components maked with `'use client';` are client components while the others are server-side. 
+If you just want to look at the code, you can do so in the [src](src) folder. The [app](src/app) folder contains the pages that are rendered by Next.js. Each page is a page.tsx inside its own folder. The [layout](src/app/layout.tsx) file contains the wrapper for the entire site. The [components](src/components) folder contains the components that are inside these pages. Components maked with `'use client';` are client components while the others are server-side. 
 
+Note: Please try and view on as close to a 1920x1080 screen as possible. The site is only partly responsive and will not look good on different aspect ratio (especially portrait) screens.
 
 ## Licence
 
