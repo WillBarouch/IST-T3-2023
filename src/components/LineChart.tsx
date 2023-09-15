@@ -6,7 +6,6 @@ const data = [
   { time: new Date(2023, 7, 22, 6, 0), calories: 300 },
   { time: new Date(2023, 7, 22, 7, 0), calories: 110 },
   { time: new Date(2023, 7, 22, 8, 0), calories: 240 },
-  // Add more data points
   { time: new Date(2023, 7, 22, 9, 0), calories: 150 },
   { time: new Date(2023, 7, 22, 10, 0), calories: 210 },
   { time: new Date(2023, 7, 22, 11, 0), calories: 280 },
